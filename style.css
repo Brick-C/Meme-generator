@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&family=Dosis:wght@300&family=Montserrat:wght@300;600&display=swap');
+
+body{
+    background-color: rgb(24, 60, 109);
+}
+
+#select, #top, #bottom{
+    color: white;
+    font-family: Dancing Script;
+}
+
+#top, #bottom{
+    font-size: 35px;
+}
+
+#select{
+    font-size: 42px;
+    font-family: Dosis;
+}
+
+.meme-generator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label{
+    margin-top: 13px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+input {
+    margin-top: 16px;
+    width: 60%;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+#meme{
+    margin-top: 25px;
+    width: 50%;
+    height: 50%;
+}

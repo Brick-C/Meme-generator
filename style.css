@@ -1,45 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&family=Dosis:wght@300&family=Montserrat:wght@300;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&family=Dosis:wght@300&family=Montserrat:wght@300;600&display=swap");
 
-body{
-    background-color: rgb(24, 60, 109);
-}
-
-#select, #top, #bottom{
-    color: white;
-    font-family: Dancing Script;
-}
-
-#top, #bottom{
-    font-size: 35px;
-}
-
-#select{
-    font-size: 42px;
-    font-family: Dosis;
+body {
+  background-color: #374355;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .meme-generator {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  background-color: #27374d;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 1100px; /* Increased max width to accommodate two sections */
+}
+
+.meme-input {
+  flex: 1; /* Takes up available space */
+  padding-right: 20px; /* Space between input and canvas */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.meme-canvas {
+  flex: 1; /* Takes up available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#select,
+#top,
+#bottom {
+  color: #f0f8ff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#top,
+#bottom {
+  font-size: 2.2em;
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+#select {
+  font-size: 2.6em;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #cbd5e1;
+  margin-bottom: 5px;
+}
+
+input[type="file"],
+input[type="text"],
+select,
+input[type="number"],
+input[type="color"],
+button {
+  margin-top: 10px;
+  width: 95%; /* Adjust width within the input section */
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+  background-color: #334155;
+  color: #f0f8ff;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: none;
+  border-color: #64b5f6;
+  box-shadow: 0 0 0 0.2rem rgba(100, 181, 246, 0.25);
+}
+
+button {
+  background-color: #64b5f6;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: background-color 0.3s ease;
+  width: 95%;
+}
+
+button:hover {
+  background-color: #42a5f5;
+}
+
+#meme {
+  width: 100%; /* This is crucial: make canvas fill its container's CSS width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't overflow */
+  max-height: 500px; /* Limit max height for display */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #4a5568; /* Placeholder background for no image */
+  display: block; /* Remove extra space below canvas */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .meme-generator {
+    flex-direction: column; /* Stack input and canvas on smaller screens */
     align-items: center;
-    justify-content: center;
-}
+  }
 
-label{
-    margin-top: 13px;
-    font-weight: bold;
-    font-size: 22px;
-}
+  .meme-input {
+    width: 95%;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
 
-input {
-    margin-top: 16px;
-    width: 60%;
-    box-sizing: border-box;
-    border-radius: 6px;
-}
-
-#meme{
-    margin-top: 25px;
-    width: 50%;
-    height: 50%;
+  .meme-canvas {
+    width: 95%;
+  }
 }
